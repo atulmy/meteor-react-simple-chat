@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 // Create Collection
-export const ChatRoomMembers = new Mongo.Collection('chat_room_members');
+let ChatRoomMembers = new Mongo.Collection('chat_room_members');
 
 // Define schema
 ChatRoomMembers.schema = new SimpleSchema({
@@ -48,3 +48,6 @@ ChatRoomMembers.schema = new SimpleSchema({
 
 // Attach Schema
 ChatRoomMembers.attachSchema(ChatRoomMembers.schema);
+
+// Finally, export the Collection
+export default ChatRoomMembers

@@ -49,7 +49,7 @@ class UserLogin extends React.Component {
 
     render() {
         return (
-            <div className="col s12 m8">
+            <div className="col s12 m10">
                 <ReactHelmet
                     title="Login - Simple Chat"
                 />

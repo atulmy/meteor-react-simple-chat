@@ -1,10 +1,16 @@
-// Imports
+// App Imports
 
-// App
+// Chat Room Members
+import '../../api/chat-room-members/methods';
+import '../../api/chat-room-members/publish';
 
-// Tweets
+// Chat Rooms
 import '../../api/chat-rooms/methods';
 import '../../api/chat-rooms/publish';
+
+// Chats
+import '../../api/chats/methods';
+import '../../api/chats/publish';
 
 // Users
 import '../../api/users/methods';

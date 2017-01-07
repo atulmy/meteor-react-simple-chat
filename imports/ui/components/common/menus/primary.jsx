@@ -16,11 +16,11 @@ class MenuPrimary extends React.Component {
 
         if (this.props.user && typeof this.props.user._id != 'undefined') {
             links = (
-                <li><Link to="/my-chats">My Chats</Link></li>
+                <li><Link to="/my-chats" activeClassName="active">My Chats</Link></li>
             )
         } else {
             links = (
-                <li><Link to="/login">My Chats</Link></li>
+                <li><Link to="/login" activeClassName="active">My Chats</Link></li>
             )
         }
 
@@ -30,7 +30,7 @@ class MenuPrimary extends React.Component {
     render() {
         return (
             <ul className="menu-primary">
-                <li><Link to="/" activeClassName="active">Public Chat Rooms</Link></li>
+                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={ true }>Public Chat Rooms</Link></li>
 
                 { this.renderLinks() }
             </ul>

@@ -2,14 +2,14 @@
 import React from 'react';
 import ReactHelmet from 'react-helmet';
 
-// Home Component
-class Home extends React.Component {
+// My Chats Component
+class MyChats extends React.Component {
 
     render() {
         return (
             <div>
                 <ReactHelmet
-                    title="Home - Chat"
+                    title="My Chats - Simple Chat"
                 />
 
                 <div className="col s12 m4">
@@ -25,9 +25,9 @@ class Home extends React.Component {
 }
 
 // Contexts
-Home.contextTypes = {
+MyChats.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default Home;
+export default MyChats;

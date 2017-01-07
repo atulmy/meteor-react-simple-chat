@@ -1,6 +1,4 @@
-// Imports
-
-// App
+// App Imports
 
 // API
 import './api';

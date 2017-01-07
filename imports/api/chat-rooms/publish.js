@@ -2,9 +2,9 @@
 import { Meteor } from 'meteor/meteor';
 
 // App Imports
-import { ChatRooms } from './collection';
+import ChatRooms from './collection';
 
 // All chat rooms
-Meteor.publish('chat-rooms', () => {
-    return ChatRooms.find({}, { sort: { createdAt: -1 } });
+Meteor.publish('public-chat-rooms-publication', () => {
+    return ChatRooms.find({ isPubic: true }, { sort: { createdAt: -1 } });
 });

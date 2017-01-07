@@ -7,9 +7,9 @@ class About extends React.Component {
 
     render() {
         return (
-            <section>
+            <div className="col s12 m10">
                 <ReactHelmet
-                    title="About - Chat"
+                    title="About - Simple Chat"
                 />
 
                 <h2>About</h2>
@@ -17,7 +17,7 @@ class About extends React.Component {
                 <p>Github Repo: <a href="https://github.com/atulmy/meteor-react-simple-chat">https://github.com/atulmy/meteor-react-simple-chat</a></p>
 
                 <p>Demo: <a href="http://meteor-react-simple-chat.demo.atulmy.com/">http://meteor-react-simple-chat.demo.atulmy.com</a></p>
-            </section>
+            </div>
         )
     }
 

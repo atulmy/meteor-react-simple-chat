@@ -4,10 +4,10 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
 // App Imports
-import { Chats } from './collection';
+import Chats from './collection';
 
 export const add = new ValidatedMethod({
-    name: 'ChatRooms.add',
+    name: 'Chats.add',
 
     validate: new SimpleSchema({
         tweet: {
@@ -16,7 +16,7 @@ export const add = new ValidatedMethod({
     }).validator(),
 
     run({ chatRoomId, message }) {
-        console.log('M - ChatRooms.add / run');
+        console.log('M - Chats.add / run');
 
         let response = {
             success: false,

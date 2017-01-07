@@ -4,7 +4,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 
 // App Imports
-import { ChatRoomMembers } from './collection';
+import ChatRoomMembers from './collection';
 
 export const add = new ValidatedMethod({
     name: 'ChatRoomMembers.add',

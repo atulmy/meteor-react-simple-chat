@@ -1,9 +1,8 @@
 // Imports
-// Libraries
 import { ReactRouterSSR } from 'meteor/reactrouter:react-router-ssr';
 import ReactHelmet from 'react-helmet';
 
-// App
+// App Imports
 import AppRoutes from '../common/routes';
 
 Meteor.startup(function () {
