@@ -1,0 +1,84 @@
+/* --------------- Common --------------- */
+    html, body {
+        padding: 0px;
+        margin: 0px;
+        background-color: #ffffff;
+        color: black;
+        line-height: normal;
+        font-family: 'Roboto', sans-serif;
+    }
+    .display-none { display: none; }
+    .float-left { float: left; }
+    .float-right { float: right; }
+/* --------------- / Common --------------- */
+
+/* --------------- Typography --------------- */
+    a { text-decoration: none; color: black; }
+    .tx-center { text-align: center; }
+    .tx-uppercase { text-transform: uppercase; }
+    .tx-underlined { text-decoration: underline; }
+    .tx-italic { font-style: italic; }
+    /* size */
+        .tx-xxs { font-size: 10px; }
+        .tx-xs { font-size: 12px; }
+        .tx-sm { font-size: 14px; }
+        .tx-md { font-size: 18px; }
+        .tx-lg { font-size: 22px; }
+        .tx-xl { font-size: 28px; }
+    /* thickness */
+        .tx-thin { font-weight: 100; }
+        .tx-light { font-weight: 200; }
+        .tx-lighter { font-weight: 300; }
+        .tx-bold { font-weight: 500; }
+        .tx-bolder { font-weight: 700; }
+/* --------------- / Typography --------------- */
+
+/* --------------- Content --------------- */
+    /* vertical align */
+        .vertical-align {
+            display: table;
+            height: 100%;
+            width: 100%;
+            margin: 0px !important;
+        }
+        .vertical-align .vertical-align-child {
+            display: table-cell;
+            vertical-align: middle;
+            float: none;
+            height: 100%;
+            width: 100%;
+        }
+
+    /* header */
+        header {
+            border-bottom: 1px solid #f3f3f3;
+            padding: 10px;
+            overflow: hidden;
+        }
+        header .header-icon i {
+            font-size: 2rem;
+        }
+
+    /* menus */
+        /* primary */
+            .menu-primary {
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            .menu-primary li {
+                margin-top: 1rem;
+            }
+            .menu-primary li a {
+                display: block;
+                padding: 1rem;
+                border: 1px solid #f3f3f3;
+            }
+            .menu-primary li a:hover, .menu-primary li a.active {
+                background-color: #f3f3f3;
+            }
+        /* secondary */
+            .menu-secondary {
+
+            }
+/* --------------- / Content --------------- */
