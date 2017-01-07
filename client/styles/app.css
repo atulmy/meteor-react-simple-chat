@@ -87,5 +87,22 @@
             border: 1px solid #f3f3f3;
             padding: 1rem;
             margin-top: 1rem;
+            cursor: pointer;
+        }
+        .card.active, .card:hover {
+            background-color: #f3f3f3;
+        }
+        .card .card-header {
+            border-bottom: 1px solid #f3f3f3;
+            font-weight: 500;
+            padding-bottom: 0.3rem;
+        }
+        .card .card-body {
+            padding: 0.3rem 0;
+        }
+        .card .card-footer {
+            font-weight: 300;
+            font-size: 0.75rem;
+            padding-top: 0.3rem;
         }
 /* --------------- / Content --------------- */

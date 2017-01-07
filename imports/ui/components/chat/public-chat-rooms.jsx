@@ -6,15 +6,31 @@ import moment from 'moment';
 // Public Chat Rooms Component
 class PublicChatRooms extends React.Component {
 
+    componentWillMount() {
+        this.state = {
+            selectedChatRoomId: ''
+        };
+    }
+
+    selectChatRoom({ _id }) {
+        this.setState({
+            selectedChatRoomId: _id
+        });
+    }
+
     renderChatRooms() {
         let tweetsHtml;
 
         if (this.props.publicChatRoomsLoaded) {
             tweetsHtml = (
                 this.props.publicChatRooms.map((chatRoom) => (
-                    <div className="card" key={ chatRoom._id }>
-                        <div className="card-body">
+                    <div className="card" key={ chatRoom._id } onClick={ ()=>this.selectChatRoom(chatRoom) }>
+                        <div className="card-header">
                             { chatRoom.title }
+                        </div>
+
+                        <div className="card-body">
+                            Some description
                         </div>
 
                         <div className="card-footer">
@@ -44,7 +60,7 @@ class PublicChatRooms extends React.Component {
                 </div>
 
                 <div className="col s12 m6">
-                    b
+                    <p>{ this.state.selectedChatRoomId ? this.state.selectedChatRoomId+' selected' : 'Select a chat room to begin' }</p>
                 </div>
             </div>
         )

@@ -59,9 +59,9 @@ class UserRegister extends React.Component {
 
     render() {
         return (
-            <section>
+            <div className="col s12 m4">
                 <ReactHelmet
-                    title="Register - Zwitter"
+                    title="Register - Simple Chat"
                 />
 
                 <h2>Register</h2>
@@ -99,7 +99,7 @@ class UserRegister extends React.Component {
 
                     <button type="submit" className="btn btn-default" disabled={ this.state.isLoading }>Register</button>
                 </form>
-            </section>
+            </div>
         )
     }
 }
