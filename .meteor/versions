@@ -76,6 +76,7 @@ reactive-var@1.0.11
 reactrouter:react-router-ssr@3.1.5
 reload@1.1.11
 retry@1.0.9
+reywood:publish-composite@1.4.2
 routepolicy@1.0.12
 service-configuration@1.0.11
 session@1.1.7
@@ -92,6 +93,7 @@ templating-compiler@1.2.15
 templating-runtime@1.2.15
 templating-tools@1.0.5
 tmeasday:check-npm-versions@0.3.1
+tmeasday:publish-counts@0.8.0
 tracker@1.1.1
 ui@1.0.12
 underscore@1.0.10

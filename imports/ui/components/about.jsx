@@ -14,9 +14,11 @@ class About extends React.Component {
 
                 <h2>About</h2>
 
-                <p>Github Repo: <a href="https://github.com/atulmy/meteor-react-simple-chat">https://github.com/atulmy/meteor-react-simple-chat</a></p>
+                <p>A simple chat application build with Meteor and React</p>
 
-                <p>Demo: <a href="http://meteor-react-simple-chat.demo.atulmy.com/">http://meteor-react-simple-chat.demo.atulmy.com</a></p>
+                <p>Github Repository: <a href="https://github.com/atulmy/meteor-react-simple-chat" className="tx-underlined">https://github.com/atulmy/meteor-react-simple-chat</a></p>
+
+                <p>Demo: <a href="http://meteor-react-simple-chat.demo.atulmy.com/" className="tx-underlined">http://meteor-react-simple-chat.demo.atulmy.com</a></p>
             </div>
         )
     }

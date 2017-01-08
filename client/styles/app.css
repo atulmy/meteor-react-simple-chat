@@ -1,7 +1,7 @@
 /* --------------- Common --------------- */
     html, body {
-        padding: 0px;
-        margin: 0px;
+        padding: 0;
+        margin: 0;
         background-color: #ffffff;
         color: black;
         line-height: normal;
@@ -19,7 +19,7 @@
     .tx-underlined { text-decoration: underline; }
     .tx-italic { font-style: italic; }
     /* size */
-        .tx-xxs { font-size: 10px; }
+        .tx-xxs { font-size: 10; }
         .tx-xs { font-size: 12px; }
         .tx-sm { font-size: 14px; }
         .tx-md { font-size: 18px; }
@@ -31,6 +31,10 @@
         .tx-lighter { font-weight: 300; }
         .tx-bold { font-weight: 500; }
         .tx-bolder { font-weight: 700; }
+    /* fonts */
+        .font-handwriting {
+            font-family: 'Handlee', cursive;
+        }
 /* --------------- / Typography --------------- */
 
 /* --------------- Content --------------- */
@@ -39,7 +43,7 @@
             display: table;
             height: 100%;
             width: 100%;
-            margin: 0px !important;
+            margin: 0 !important;
         }
         .vertical-align .vertical-align-child {
             display: table-cell;
@@ -52,8 +56,9 @@
     /* header */
         header {
             border-bottom: 1px solid #f3f3f3;
-            padding: 10px;
-            overflow: hidden;
+            padding: 1rem;
+            height: 1.8rem;
+            margin-bottom: 1rem;
         }
         header .header-icon i {
             font-size: 2rem;
@@ -63,11 +68,8 @@
         /* primary */
             .menu-primary {
                 list-style: none;
-                padding: 0px;
-                margin: 0px;
-            }
-            .menu-primary li {
-                margin-top: 1rem;
+                padding: 0;
+                margin: 0;
             }
             .menu-primary li a {
                 display: block;
@@ -79,14 +81,26 @@
             }
         /* secondary */
             .menu-secondary {
-
+                position: relative;
+            }
+            .menu-secondary ul {
+                position: absolute;
+                top: 1rem;
+                right: 0;
+                margin: 1rem 0 0 0;
+                padding: 0.5rem 1rem;
+                list-style: none;
+                background-color: #f3f3f3;
+            }
+            .menu-secondary ul li a {
+                display: block;
+                padding: 0.5rem 1rem;
             }
 
     /* card */
         .card {
             border: 1px solid #f3f3f3;
             padding: 1rem;
-            margin-top: 1rem;
             cursor: pointer;
         }
         .card.active, .card:hover {
@@ -101,6 +115,21 @@
             padding: 0.3rem 0;
         }
         .card .card-footer {
+            font-weight: 300;
+            font-size: 0.75rem;
+            padding-top: 0.3rem;
+        }
+
+    /* list */
+        .list {
+            border: 1px solid #f3f3f3;
+            padding: 1rem;
+        }
+        .list .list-body {
+            padding: 0.3rem 0;
+            font-size: 1.1rem;
+        }
+        .list .list-footer {
             font-weight: 300;
             font-size: 0.75rem;
             padding-top: 0.3rem;

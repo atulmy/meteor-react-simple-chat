@@ -23,6 +23,10 @@ const ChatRoomContainer = createContainer((props) => {
     const chatsLoaded = chatsHandle.ready();
     const chats = Chats.find({ chatRoomId: props.params.chatRoomId }).fetch();
 
+    chats.forEach((chat, i) => {
+        chats[i].user = Meteor.users.findOne(chats[i].userId, { fields: { _id: 1, username: 1 }});
+    });
+
     return {
         publicChatRoomsLoaded,
         publicChatRooms,

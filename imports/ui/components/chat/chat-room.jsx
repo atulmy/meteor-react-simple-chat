@@ -39,7 +39,7 @@ class ChatRoom extends React.Component {
                 )
             } else {
                 chatsList = (
-                    <p>No message to show.</p>
+                    <p>No messages to show.</p>
                 )
             }
         } else {

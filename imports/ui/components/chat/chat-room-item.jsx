@@ -7,21 +7,21 @@ import { Link } from 'react-router';
 class ChatRoomItem extends React.Component {
 
     render() {
-        const chatRoom = this.props.chatRoom;
+        const { _id, title, description, createdAt } = this.props.chatRoom;
 
         return (
-            <Link to={ `/chat-room/${ chatRoom._id }` }>
+            <Link to={ `/chat-room/${ _id }` }>
                 <div className="card">
                     <div className="card-header">
-                        { chatRoom.title }
+                        { title }
                     </div>
 
                     <div className="card-body">
-                        Some description
+                        { description }
                     </div>
 
                     <div className="card-footer">
-                        { moment(chatRoom.createdAt).fromNow() }
+                        { moment(createdAt).fromNow() }
                     </div>
                 </div>
             </Link>

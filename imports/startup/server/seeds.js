@@ -25,8 +25,8 @@ if(Meteor.users.find().count() == 0) {
 
     // Chat Rooms
     if(ChatRooms.find().count() == 0) {
-        const chatRoomId = ChatRooms.insert({ userId: jonsnow._id, title: 'Jon Snow Room', isPubic: true });
-        const chatRoomTwoId = ChatRooms.insert({ userId: aryastark._id, title: 'Arya Stark Room', isPubic: true });
+        const chatRoomId = ChatRooms.insert({ userId: jonsnow._id, title: 'Jon Snow Room', description: 'And my watch has ended.', isPubic: true });
+        const chatRoomTwoId = ChatRooms.insert({ userId: aryastark._id, title: 'Arya Stark Room', description: 'A lady has no name.', isPubic: true });
 
         // Chat Room Members
         if(ChatRoomMembers.find().count() == 0) {

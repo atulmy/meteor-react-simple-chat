@@ -13,10 +13,11 @@ class DirectMessages extends React.Component {
                 />
 
                 <div className="col s12 m4">
-                    a
+                    @todo
                 </div>
+
                 <div className="col s12 m6">
-                    b
+                    @todo
                 </div>
             </div>
         )

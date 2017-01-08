@@ -24,3 +24,5 @@ mdg:validated-method
 react-meteor-data
 reactrouter:react-router-ssr
 msavin:mongol
+tmeasday:publish-counts
+reywood:publish-composite
