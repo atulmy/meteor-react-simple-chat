@@ -6,7 +6,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from '../../ui/components/app';
 // Pages
 import PublicChatRoomsContainer from '../../ui/components/chat/public-chat-rooms-container';
-import MyChats from '../../ui/components/chat/my-chats';
+import ChatRoomContainer from '../../ui/components/chat/chat-room-container';
+import DirectMessages from '../../ui/components/chat/direct-messages';
 import About from '../../ui/components/about';
 // User
 import UserLogin from '../../ui/components/user/login';
@@ -17,7 +18,8 @@ const AppRoutes = (
         <Route path="/" component={ App }>
             <IndexRoute component={ PublicChatRoomsContainer } />
 
-            <Route path="my-chats" component={ MyChats } />
+            <Route path="chat-room/:chatRoomId" component={ ChatRoomContainer } />
+            <Route path="direct-messages" component={ DirectMessages } />
 
             <Route path="about" component={ About } />
 

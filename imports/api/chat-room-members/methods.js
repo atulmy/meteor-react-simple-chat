@@ -10,7 +10,7 @@ export const add = new ValidatedMethod({
     name: 'ChatRoomMembers.add',
 
     validate: new SimpleSchema({
-        tweet: {
+        chatRoomId: {
             type: String
         }
     }).validator(),

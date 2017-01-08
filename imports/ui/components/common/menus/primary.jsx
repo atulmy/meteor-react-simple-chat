@@ -16,7 +16,7 @@ class MenuPrimary extends React.Component {
 
         if (this.props.user && typeof this.props.user._id != 'undefined') {
             links = (
-                <li><Link to="/my-chats" activeClassName="active">My Chats</Link></li>
+                <li><Link to="/direct-messages" activeClassName="active">Direct Messages</Link></li>
             )
         } else {
             links = (

@@ -1,51 +1,29 @@
 // Imports
 import React from 'react';
 import ReactHelmet from 'react-helmet';
-import moment from 'moment';
+
+// App Imports
+import ChatRoomItem from './chat-room-item';
 
 // Public Chat Rooms Component
 class PublicChatRooms extends React.Component {
 
-    componentWillMount() {
-        this.state = {
-            selectedChatRoomId: ''
-        };
-    }
-
-    selectChatRoom({ _id }) {
-        this.setState({
-            selectedChatRoomId: _id
-        });
-    }
-
     renderChatRooms() {
-        let tweetsHtml;
+        let chatRoomsList;
 
         if (this.props.publicChatRoomsLoaded) {
-            tweetsHtml = (
+            chatRoomsList = (
                 this.props.publicChatRooms.map((chatRoom) => (
-                    <div className="card" key={ chatRoom._id } onClick={ ()=>this.selectChatRoom(chatRoom) }>
-                        <div className="card-header">
-                            { chatRoom.title }
-                        </div>
-
-                        <div className="card-body">
-                            Some description
-                        </div>
-
-                        <div className="card-footer">
-                            { moment(chatRoom.createdAt).fromNow() }
-                        </div>
-                    </div>
+                    <ChatRoomItem chatRoom={ chatRoom } key={ chatRoom._id }/>
                 ))
             )
         } else {
-            tweetsHtml = (
+            chatRoomsList = (
                 <p>Please wait...</p>
             )
         }
 
-        return tweetsHtml;
+        return chatRoomsList;
     }
 
     render() {
@@ -60,7 +38,7 @@ class PublicChatRooms extends React.Component {
                 </div>
 
                 <div className="col s12 m6">
-                    <p>{ this.state.selectedChatRoomId ? this.state.selectedChatRoomId+' selected' : 'Select a chat room to begin' }</p>
+                    <p>Select a chat room to begin.</p>
                 </div>
             </div>
         )

@@ -105,4 +105,11 @@
             font-size: 0.75rem;
             padding-top: 0.3rem;
         }
+
+    /* chats */
+        .chat-room-header {
+            border-bottom: 1px solid #f3f3f3;
+            font-weight: 500;
+            padding-bottom: 0.3rem;
+        }
 /* --------------- / Content --------------- */
