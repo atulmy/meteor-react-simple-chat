@@ -15,7 +15,7 @@ class Header extends React.Component {
             <header>
                 <Link to="/" className="logo header-icon float-left" title="Simple Chat"><i className="material-icons">chat</i></Link>
 
-                <MenuSecondary />
+                <MenuSecondary user={ this.props.user } />
             </header>
         )
     }

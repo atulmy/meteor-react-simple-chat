@@ -9,13 +9,18 @@ import PublicChatRooms from './public-chat-rooms';
 
 // Public Chat Rooms Container
 const PublicChatRoomsContainer = createContainer(() => {
-    const publicChatRoomsHandle = Meteor.subscribe('public-chat-rooms-publication');
-    const publicChatRoomsLoaded = publicChatRoomsHandle.ready();
+
+    const publicChatRoomsLoaded = Meteor.subscribe('public-chat-rooms-publication').ready();
     const publicChatRooms = ChatRooms.find().fetch();
+    publicChatRooms.forEach((chatRoom, i) => {
+        publicChatRooms[i].user = Meteor.users.findOne(chatRoom.userId);
+    });
 
     return {
         publicChatRoomsLoaded,
-        publicChatRooms
+        publicChatRooms,
+
+        user:  Meteor.user() ? Meteor.user() : {}
     };
 }, PublicChatRooms);
 

@@ -14,3 +14,4 @@ import '../../api/chats/publish';
 
 // Users
 import '../../api/users/methods';
+import '../../api/users/publish';

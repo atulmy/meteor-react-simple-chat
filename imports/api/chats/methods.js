@@ -27,17 +27,21 @@ export const add = new ValidatedMethod({
             message: 'There was some sever error.'
         };
 
-        if(chatRoomId != '' && message != '') {
-            let success = Chats.insert({
-                chatRoomId,
-                message,
-                userId: Meteor.userId()
-            });
+        if(Meteor.userId()) {
+            if(chatRoomId != '' && message != '') {
+                let success = Chats.insert({
+                    chatRoomId,
+                    message,
+                    userId: Meteor.userId()
+                });
 
-            if(success) {
-                response.success = true;
-                response.message = 'Chat room added.';
+                if(success) {
+                    response.success = true;
+                    response.message = 'Chat room added.';
+                }
             }
+        } else {
+            response.message = 'You are not logged in.';
         }
 
         return response;

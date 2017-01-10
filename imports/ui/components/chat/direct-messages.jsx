@@ -2,6 +2,9 @@
 import React from 'react';
 import ReactHelmet from 'react-helmet';
 
+// App Imports
+import DirectMessageList from './direct-message-list';
+
 // Direct Messages Component
 class DirectMessages extends React.Component {
 
@@ -13,17 +16,28 @@ class DirectMessages extends React.Component {
                 />
 
                 <div className="col s12 m4">
-                    @todo
+                    <DirectMessageList
+                        usersAllLoaded={ this.props.usersAllLoaded }
+                        usersAll={ this.props.usersAll }
+                        user={ this.props.user }
+                    />
                 </div>
 
                 <div className="col s12 m6">
-                    @todo
+                    <p className="tx-grey">Select a user to send direct messages.</p>
                 </div>
             </div>
         )
     }
 
 }
+
+// Properties
+DirectMessages.propTypes = {
+    usersAllLoaded: React.PropTypes.bool,
+    usersAll: React.PropTypes.array,
+    user: React.PropTypes.object
+};
 
 // Contexts
 DirectMessages.contextTypes = {

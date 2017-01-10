@@ -2,8 +2,9 @@
 // Libraries
 import React from 'react';
 import ReactHelmet from 'react-helmet';
+import { Link } from 'react-router';
 
-// App
+// App Imports
 import * as UserMethods from '../../../api/users/methods';
 
 // User Register Component
@@ -69,35 +70,35 @@ class UserRegister extends React.Component {
                 { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
 
                 <form id="form-register" onSubmit={ this.onSubmit.bind(this) }>
-                    <div className="form-group">
-                        <label htmlFor="user-username">Username</label>
+                    <label htmlFor="user-username">Username</label>
 
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="user-username"
-                            name="username"
-                            placeholder="Eg: jonsnow"
-                            value={ this.state.username }
-                            onChange={ this.onChange.bind(this) }
-                        />
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="user-username"
+                        name="username"
+                        placeholder="Eg: jonsnow"
+                        value={ this.state.username }
+                        onChange={ this.onChange.bind(this) }
+                    />
+
+                    <label htmlFor="user-password" className="mt1">Password</label>
+
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="user-password"
+                        name="password"
+                        placeholder="Password"
+                        value={ this.state.password }
+                        onChange={ this.onChange.bind(this) }
+                    />
+
+                    <div className="mt1">
+                        <button type="submit" className="btn btn-default mr1" disabled={ this.state.isLoading }>Register</button>
+
+                        <Link to="/login">Login</Link>
                     </div>
-
-                    <div className="form-group">
-                        <label htmlFor="user-password">Password</label>
-
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="user-password"
-                            name="password"
-                            placeholder="Password"
-                            value={ this.state.password }
-                            onChange={ this.onChange.bind(this) }
-                        />
-                    </div>
-
-                    <button type="submit" className="btn btn-default" disabled={ this.state.isLoading }>Register</button>
                 </form>
             </div>
         )

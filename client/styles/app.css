@@ -8,8 +8,13 @@
         font-family: 'Roboto', sans-serif;
     }
     .display-none { display: none; }
+    .display-block { display: block; }
     .float-left { float: left; }
     .float-right { float: right; }
+    .width100 { width: 100%; }
+    .p0 { padding: 0 !important; }
+    .mt1 { margin-top: 1rem; }
+    .mr1 { margin-right: 1rem; }
 /* --------------- / Common --------------- */
 
 /* --------------- Typography --------------- */
@@ -19,7 +24,6 @@
     .tx-underlined { text-decoration: underline; }
     .tx-italic { font-style: italic; }
     /* size */
-        .tx-xxs { font-size: 10; }
         .tx-xs { font-size: 12px; }
         .tx-sm { font-size: 14px; }
         .tx-md { font-size: 18px; }
@@ -31,6 +35,10 @@
         .tx-lighter { font-weight: 300; }
         .tx-bold { font-weight: 500; }
         .tx-bolder { font-weight: 700; }
+    /* colors */
+        .tx-grey {
+            color: grey;
+        }
     /* fonts */
         .font-handwriting {
             font-family: 'Handlee', cursive;
@@ -74,10 +82,15 @@
             .menu-primary li a {
                 display: block;
                 padding: 1rem;
-                border: 1px solid #f3f3f3;
             }
             .menu-primary li a:hover, .menu-primary li a.active {
                 background-color: #f3f3f3;
+            }
+            .menu-primary li a i {
+                float: left;
+                font-size: 1.3rem;
+                line-height: 1.3rem;
+                margin-right: 10px;
             }
         /* secondary */
             .menu-secondary {
@@ -96,6 +109,14 @@
                 display: block;
                 padding: 0.5rem 1rem;
             }
+            .menu-secondary-overlay {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: rgba(255, 255, 255, 0.75);
+            }
 
     /* card */
         .card {
@@ -107,7 +128,6 @@
             background-color: #f3f3f3;
         }
         .card .card-header {
-            border-bottom: 1px solid #f3f3f3;
             font-weight: 500;
             padding-bottom: 0.3rem;
         }
@@ -139,6 +159,11 @@
         .chat-room-header {
             border-bottom: 1px solid #f3f3f3;
             font-weight: 500;
-            padding-bottom: 0.3rem;
+            padding-bottom: 0.5rem;
+        }
+
+    /* alert */
+        .alert.alert-danger {
+            color: red;
         }
 /* --------------- / Content --------------- */

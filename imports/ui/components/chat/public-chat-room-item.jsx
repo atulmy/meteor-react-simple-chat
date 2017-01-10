@@ -3,15 +3,15 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router';
 
-// Chat Room Component
-class ChatRoomItem extends React.Component {
+// Public Chat Room Component
+class PublicChatRoomItem extends React.Component {
 
     render() {
-        const { _id, title, description, createdAt } = this.props.chatRoom;
+        const { _id, title, description, createdAt, user } = this.props.chatRoom;
 
         return (
             <Link to={ `/chat-room/${ _id }` }>
-                <div className="card">
+                <div className="card" title={ `Created by ${ user.username }` }>
                     <div className="card-header">
                         { title }
                     </div>
@@ -21,7 +21,7 @@ class ChatRoomItem extends React.Component {
                     </div>
 
                     <div className="card-footer">
-                        { moment(createdAt).fromNow() }
+                        { user.username } &bull; { moment(createdAt).fromNow() }
                     </div>
                 </div>
             </Link>
@@ -31,9 +31,9 @@ class ChatRoomItem extends React.Component {
 }
 
 // Properties
-ChatRoomItem.propTypes = {
+PublicChatRoomItem.propTypes = {
     chatRoom: React.PropTypes.object
 };
 
 // Finally, export the Component
-export default ChatRoomItem;
+export default PublicChatRoomItem;

@@ -13,7 +13,7 @@ Meteor.publishComposite('chats-publication', (chatRoomId) => {
         children: [,
             {
                 find: function(chat) {
-                    return Meteor.users.find(chat.userId);
+                    return Meteor.users.find(chat.userId, { fields: { _id: 1, username: 1, createdAt: 1 } });
                 }
             }
         ]

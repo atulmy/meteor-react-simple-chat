@@ -1,30 +1,14 @@
 // Imports
 import React from 'react';
 import ReactHelmet from 'react-helmet';
+import { Link } from 'react-router';
 
 // App Imports
-import ChatRoomItem from './chat-room-item';
+import PublicChatRoomCreate from './public-chat-room-create';
+import PublicChatRoomList from './public-chat-room-list';
 
 // Public Chat Rooms Component
 class PublicChatRooms extends React.Component {
-
-    renderChatRooms() {
-        let chatRoomsList;
-
-        if (this.props.publicChatRoomsLoaded) {
-            chatRoomsList = (
-                this.props.publicChatRooms.map((chatRoom) => (
-                    <ChatRoomItem chatRoom={ chatRoom } key={ chatRoom._id }/>
-                ))
-            )
-        } else {
-            chatRoomsList = (
-                <p>Please wait...</p>
-            )
-        }
-
-        return chatRoomsList;
-    }
 
     render() {
         return (
@@ -34,11 +18,16 @@ class PublicChatRooms extends React.Component {
                 />
 
                 <div className="col s12 m4">
-                    { this.renderChatRooms() }
+                    <PublicChatRoomList
+                        publicChatRoomsLoaded={ this.props.publicChatRoomsLoaded }
+                        publicChatRooms={ this.props.publicChatRooms }
+                    />
+
+                    <PublicChatRoomCreate user={ this.props.user } />
                 </div>
 
                 <div className="col s12 m6">
-                    <p>Select a chat room to begin.</p>
+                    <p className="tx-grey">Select a chat room to begin.</p>
                 </div>
             </div>
         )
@@ -49,7 +38,9 @@ class PublicChatRooms extends React.Component {
 // Properties
 PublicChatRooms.propTypes = {
     publicChatRoomsLoaded: React.PropTypes.bool,
-    publicChatRooms: React.PropTypes.array
+    publicChatRooms: React.PropTypes.array,
+
+    user: React.PropTypes.object
 };
 
 // Contexts
