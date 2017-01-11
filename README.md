@@ -35,6 +35,10 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
 - Install NPM modules `npm install`
 - Run Meteor `meteor`
 
+## Screenshots
+![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat.png)
+![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-secondary-menu.png)
+
 ## Authors
 
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
