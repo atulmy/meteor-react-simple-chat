@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router';
 
 // App Imports
-import * as ChatRoomMethods from '../../../api/chat-rooms/methods';
+import * as ChatRoomMethods from '../../../../api/chat-rooms/methods';
 
-// Chat Room Create Component
-class PublicChatRoomCreate extends React.Component {
+// Public Chat Rooms Create Component
+class ChatRoomsCreate extends React.Component {
 
     constructor(props) {
         super(props);
@@ -68,6 +68,9 @@ class PublicChatRoomCreate extends React.Component {
                     this.props.user._id
                         ?
                     <form className="mt1" onSubmit={ this.onSubmitCreateRoom.bind(this) }>
+                        { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
+                        { this.state.isLoading ? <p className="alert alert-info">Please wait...</p> : '' }
+
                         <div className="row">
                             <div className="col s12 p0">
                                 <input
@@ -109,14 +112,14 @@ class PublicChatRoomCreate extends React.Component {
 }
 
 // Properties
-PublicChatRoomCreate.propTypes = {
+ChatRoomsCreate.propTypes = {
     user: React.PropTypes.object
 };
 
 // Contexts
-PublicChatRoomCreate.contextTypes = {
+ChatRoomsCreate.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default PublicChatRoomCreate;
+export default ChatRoomsCreate;

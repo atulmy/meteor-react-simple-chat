@@ -1,7 +1,39 @@
-# Simple Chat (work in progress)
+# Simple Chat
 A simple chat application built with Meteor 1.4 and ReactJS
 
-Demo: http://meteor-react-simple-chat.demo.atulmy.com/ (coming soon)
+Demo: http://meteor-react-simple-chat.demo.atulmy.com/
+
+## Packages Used
+
+### Meteor (atmospherejs)
+- **accounts-password** (Meteor Core Accounts)
+- **aldeed:collection2** (MongoDB Schema, Schema Validations)
+- **mdg:validated-method** (Meteor methods in structured way)
+- **reactrouter:react-router-ssr** (React Server Side Rendering)
+- **reywood:publish-composite** (Publish data from multiple collections with a reactive join)
+- msavin:mongol (In-App MongoDB Editor for Meteor) [optional]
+
+### Node (npm)
+- **react** (Core React library)
+- **react-dom** (React package for working with the DOM)
+- **react-router** (Routing library for React)
+- **react-addons-pure-render-mixin** (React PureRenderMixin add-on)
+- **react-mounter** (Mount React components to DOM easily in Meteor)
+- **react-helmet** (A document head manager for React)
+- **babel-runtime** (Babel selfContained runtime)
+- **bcrypt** (A bcrypt library for NodeJS)
+- moment (Parse, validate, manipulate, and display dates) [optional]
+
+## Features
+- Chat Rooms (group chat)
+- Direct Messages (one to one chat)
+- Server Side Rendering
+
+## Running
+- Install Meteor `curl https://install.meteor.com/ | sh` (if you haven't already)
+- Clone repo `git clone git@github.com:atulmy/meteor-react-simple-chat.git simple-chat` and `cd simple-chat`
+- Install NPM modules `npm install`
+- Run Meteor `meteor`
 
 ## Authors
 

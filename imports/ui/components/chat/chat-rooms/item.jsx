@@ -3,8 +3,8 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router';
 
-// Public Chat Room Component
-class PublicChatRoomItem extends React.Component {
+//  Chat Rooms Component
+class ChatRoomsItem extends React.Component {
 
     render() {
         const { _id, title, description, createdAt, user } = this.props.chatRoom;
@@ -31,9 +31,9 @@ class PublicChatRoomItem extends React.Component {
 }
 
 // Properties
-PublicChatRoomItem.propTypes = {
+ChatRoomsItem.propTypes = {
     chatRoom: React.PropTypes.object
 };
 
 // Finally, export the Component
-export default PublicChatRoomItem;
+export default ChatRoomsItem;

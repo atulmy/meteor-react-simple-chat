@@ -4,9 +4,9 @@ import moment from 'moment';
 import { Link } from 'react-router';
 
 // App Imports
-import * as ChatRoomMethods from '../../../api/chat-rooms/methods';
+import * as ChatRoomMethods from '../../../../api/chat-rooms/methods';
 
-// Direct Message User Component
+// Direct Message Item Component
 class DirectMessageItem extends React.Component {
 
     startChatWithUser(id) {

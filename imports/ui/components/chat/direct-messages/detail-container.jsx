@@ -4,12 +4,12 @@ import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 // App Imports
-import ChatRooms from '../../../api/chat-rooms/collection';
-import Chats from '../../../api/chats/collection';
-import DirectMessage from './direct-message';
+import ChatRooms from '../../../../api/chat-rooms/collection';
+import Chats from '../../../../api/chats/collection';
+import DirectMessageDetail from './detail';
 
-// Direct Message Container
-const DirectMessageContainer = createContainer((props) => {
+// Direct Message Detail Container
+const DirectMessageDetailContainer = createContainer((props) => {
 
     const usersAllLoaded = Meteor.subscribe('users-all-publication').ready();
     const usersAll = Meteor.users.find({ _id: { $ne: Meteor.userId() } }, { sort: { createdAt: -1 }}).fetch();
@@ -36,7 +36,7 @@ const DirectMessageContainer = createContainer((props) => {
 
         user:  Meteor.user() ? Meteor.user() : {}
     };
-}, DirectMessage);
+}, DirectMessageDetail);
 
 // Finally, export the Container
-export default DirectMessageContainer;
+export default DirectMessageDetailContainer;

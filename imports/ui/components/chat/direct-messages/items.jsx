@@ -2,10 +2,10 @@
 import React from 'react';
 
 // App Imports
-import DirectMessageItem from './direct-message-item';
+import DirectMessageItem from './item';
 
-// Direct Message List Component
-class DirectMessageList extends React.Component {
+// Direct Message Items Component
+class DirectMessageItems extends React.Component {
 
     renderUsersList() {
         let chatRoomsList;
@@ -36,16 +36,16 @@ class DirectMessageList extends React.Component {
 }
 
 // Properties
-DirectMessageList.propTypes = {
+DirectMessageItems.propTypes = {
     usersAllLoaded: React.PropTypes.bool,
     usersAll: React.PropTypes.array,
     user: React.PropTypes.object
 };
 
 // Contexts
-DirectMessageList.contextTypes = {
+DirectMessageItems.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default DirectMessageList;
+export default DirectMessageItems;

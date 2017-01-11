@@ -4,13 +4,13 @@ import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 // App Imports
-import ChatRooms from '../../../api/chat-rooms/collection';
-import ChatRoomMembers from '../../../api/chat-room-members/collection';
-import Chats from '../../../api/chats/collection';
-import PublicChatRoom from './public-chat-room';
+import ChatRooms from '../../../../api/chat-rooms/collection';
+import ChatRoomMembers from '../../../../api/chat-room-members/collection';
+import Chats from '../../../../api/chats/collection';
+import ChatRoomsDetail from './detail';
 
-// Public Chat Room Container
-const PublicChatRoomContainer = createContainer((props) => {
+//  Chat Rooms Detail Container
+const ChatRoomsDetailContainer = createContainer((props) => {
 
     const publicChatRoomsLoaded = Meteor.subscribe('public-chat-rooms-publication').ready();
     const publicChatRooms = ChatRooms.find({}, { sort: { createdAt: -1 }}).fetch();
@@ -50,7 +50,7 @@ const PublicChatRoomContainer = createContainer((props) => {
 
         user:  Meteor.user() ? Meteor.user() : {}
     };
-}, PublicChatRoom);
+}, ChatRoomsDetail);
 
 // Finally, export the Container
-export default PublicChatRoomContainer;
+export default ChatRoomsDetailContainer;

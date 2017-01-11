@@ -5,14 +5,14 @@ import ReactHelmet from 'react-helmet';
 import { Link } from 'react-router';
 
 // App Imports
-import * as ChatMethods from '../../../api/chats/methods';
-import * as ChatRoomMemberMethods from '../../../api/chat-room-members/methods';
-import PublicChatRoomCreate from './public-chat-room-create';
-import PublicChatRoomList from './public-chat-room-list';
-import ChatItem from './chat-item';
+import * as ChatRoomMemberMethods from '../../../../api/chat-room-members/methods';
+import ChatRoomsCreate from './create';
+import ChatRoomsItems from './items';
+import ChatItem from '../chat-item';
+import SendChat from '../send-chat';
 
-// Pubic Chat Room Component
-class PublicChatRoom extends React.Component {
+// Pubic Chat Rooms Detail Component
+class ChatRoomsDetail extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,7 +34,7 @@ class PublicChatRoom extends React.Component {
         let currentUserIsAMember = false;
         this.props.chatRoomMembers.forEach((chatRoomMember, i) => {
             if(this.props.user) {
-                if (this.props.chatRoomMembers[i].user._id == this.props.user._id) {
+                if (this.props.chatRoomMembers[i].user && this.props.chatRoomMembers[i].user._id === this.props.user._id) {
                     currentUserIsAMember = true;
                 }
             }
@@ -114,61 +114,26 @@ class PublicChatRoom extends React.Component {
         }
     }
 
-    onChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
-
-    onSubmitSendChat(event) {
-        event.preventDefault();
-
-        console.log('E - submit form chat room message send');
-
-        this.setState({ isLoading: true });
-
-        if(this.state.chatRoomId != '' && this.state.message != '') {
-            const input = {
-                chatRoomId: this.state.chatRoomId.trim(),
-                message: this.state.message.trim(),
-            };
-
-            ChatMethods.add.call(input, (error, response) => {
-                console.log('M - Chats.add / callback');
-
-                this.setState({ isLoading: false });
-
-                if(error) {
-                    this.setState({ error: error.reason });
-                } else {
-                    this.setState({ message: '' });
-                }
-            });
-        } else {
-            this.setState({ isLoading: false, error: 'The message cannot be blank.' });
-        }
-    }
-
     render() {
         return (
             <div>
                 <ReactHelmet
-                    title="Chat Room - Simple Chat"
+                    title=" Chat Room - Simple Chat"
                 />
 
-                { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
-                { this.state.isLoading ? <p className="alert alert-info">Please wait...</p> : '' }
-
                 <div className="col s12 m4">
-                    <PublicChatRoomList
+                    <ChatRoomsItems
                         publicChatRoomsLoaded={ this.props.publicChatRoomsLoaded }
                         publicChatRooms={ this.props.publicChatRooms }
                     />
 
-                    <PublicChatRoomCreate user={ this.props.user } />
+                    <ChatRoomsCreate user={ this.props.user } />
                 </div>
 
                 <div className="col s12 m6">
+                    { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
+                    { this.state.isLoading ? <p className="alert alert-info">Please wait...</p> : '' }
+
                     { this.renderChatRoomDetails() }
 
                     { this.renderChats() }
@@ -176,27 +141,7 @@ class PublicChatRoom extends React.Component {
                     {
                         (this.props.chatRoomMembersLoaded && this.state.currentUserIsAMember)
                             ?
-                        <form className="mt1" onSubmit={ this.onSubmitSendChat.bind(this) }>
-                            <div className="row">
-                                <div className="col s8 m10 p0">
-                                    <input
-                                        type="text"
-                                        name="message"
-                                        id="message"
-                                        className="font-handwriting"
-                                        placeholder="Type your message here..."
-                                        autoComplete="off"
-                                        required="required"
-                                        onChange={ this.onChange.bind(this) }
-                                        value={ this.state.message }
-                                    />
-                                </div>
-
-                                <div className="col s4 m2 p0">
-                                    <button type="submit" className="width100">Send</button>
-                                </div>
-                            </div>
-                        </form>
+                        <SendChat chatRoomId={ this.state.chatRoomId } />
                             :
                         (
                             this.props.user._id
@@ -214,7 +159,7 @@ class PublicChatRoom extends React.Component {
 }
 
 // Properties
-PublicChatRoom.propTypes = {
+ChatRoomsDetail.propTypes = {
     publicChatRoomsLoaded: React.PropTypes.bool,
     publicChatRooms: React.PropTypes.array,
 
@@ -231,9 +176,9 @@ PublicChatRoom.propTypes = {
 };
 
 // Contexts
-PublicChatRoom.contextTypes = {
+ChatRoomsDetail.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default PublicChatRoom;
+export default ChatRoomsDetail;

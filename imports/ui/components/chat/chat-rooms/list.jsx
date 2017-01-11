@@ -4,26 +4,26 @@ import ReactHelmet from 'react-helmet';
 import { Link } from 'react-router';
 
 // App Imports
-import PublicChatRoomCreate from './public-chat-room-create';
-import PublicChatRoomList from './public-chat-room-list';
+import ChatRoomsCreate from './create';
+import ChatRoomItems from './items';
 
-// Public Chat Rooms Component
-class PublicChatRooms extends React.Component {
+//  Chat Rooms List Component
+class ChatRoomsList extends React.Component {
 
     render() {
         return (
             <div>
                 <ReactHelmet
-                    title="Public Chat Rooms - Simple Chat"
+                    title=" Chat Rooms - Simple Chat"
                 />
 
                 <div className="col s12 m4">
-                    <PublicChatRoomList
+                    <ChatRoomItems
                         publicChatRoomsLoaded={ this.props.publicChatRoomsLoaded }
                         publicChatRooms={ this.props.publicChatRooms }
                     />
 
-                    <PublicChatRoomCreate user={ this.props.user } />
+                    <ChatRoomsCreate user={ this.props.user } />
                 </div>
 
                 <div className="col s12 m6">
@@ -36,7 +36,7 @@ class PublicChatRooms extends React.Component {
 }
 
 // Properties
-PublicChatRooms.propTypes = {
+ChatRoomsList.propTypes = {
     publicChatRoomsLoaded: React.PropTypes.bool,
     publicChatRooms: React.PropTypes.array,
 
@@ -44,9 +44,9 @@ PublicChatRooms.propTypes = {
 };
 
 // Contexts
-PublicChatRooms.contextTypes = {
+ChatRoomsList.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default PublicChatRooms;
+export default ChatRoomsList;

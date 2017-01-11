@@ -30,7 +30,7 @@ class MenuPrimary extends React.Component {
     render() {
         return (
             <ul className="menu-primary">
-                <li><Link to="/"><i className="material-icons">group</i> Public Chat Rooms</Link></li>
+                <li><Link to="/"><i className="material-icons">group</i> Chat Rooms</Link></li>
 
                 { this.renderLinks() }
             </ul>

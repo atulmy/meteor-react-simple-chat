@@ -1,7 +1,7 @@
 {
-  "name": "meteor-react-zwitter",
+  "name": "meteor-react-simple-chat",
   "version": "1.0.0",
-  "description": "A very basic clone of Twitter using Meteor 1.4 and ReactJS",
+  "description": "A simple chat application built with Meteor 1.4 and ReactJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,13 +9,11 @@
   "keywords": [
     "meteor",
     "react",
-    "twitter",
-    "clone",
-    "zwitter"
+    "chat"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/atulmy/meteor-reactjs-zwitter"
+    "url": "git://github.com/atulmy/meteor-react-simple-chat"
   },
   "author": "Atul Yadav",
   "license": "ISC",

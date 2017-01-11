@@ -5,10 +5,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 // App Imports
 import App from '../../ui/components/app';
 // Pages
-import PublicChatRoomsContainer from '../../ui/components/chat/public-chat-rooms-container';
-import PublicChatRoomContainer from '../../ui/components/chat/public-chat-room-container';
-import DirectMessagesContainer from '../../ui/components/chat/direct-messages-container';
-import DirectMessageContainer from '../../ui/components/chat/direct-message-container';
+import PublicChatRoomsListContainer from '../../ui/components/chat/chat-rooms/list-container';
+import PublicChatRoomsDetailContainer from '../../ui/components/chat/chat-rooms/detail-container';
+import DirectMessagesListContainer from '../../ui/components/chat/direct-messages/list-container';
+import DirectMessagesDetailContainer from '../../ui/components/chat/direct-messages/detail-container';
 import About from '../../ui/components/about';
 import PageNotFound from '../../ui/components/page-not-found';
 // User
@@ -18,11 +18,11 @@ import UserRegister from '../../ui/components/user/register';
 const AppRoutes = (
     <Router history={browserHistory}>
         <Route path="/" component={ App }>
-            <IndexRoute component={ PublicChatRoomsContainer } />
+            <IndexRoute component={ PublicChatRoomsListContainer } />
+            <Route path="chat-room/:chatRoomId" component={ PublicChatRoomsDetailContainer } />
 
-            <Route path="chat-room/:chatRoomId" component={ PublicChatRoomContainer } />
-            <Route path="direct-messages" component={ DirectMessagesContainer } />
-            <Route path="direct-message/:chatRoomId" component={ DirectMessageContainer } />
+            <Route path="direct-messages" component={ DirectMessagesListContainer } />
+            <Route path="direct-message/:chatRoomId" component={ DirectMessagesDetailContainer } />
 
             <Route path="about" component={ About } />
 

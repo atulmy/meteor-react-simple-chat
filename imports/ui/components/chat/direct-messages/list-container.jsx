@@ -4,10 +4,10 @@ import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 // App Imports
-import DirectMessages from './direct-messages';
+import DirectMessagesList from './list';
 
-// Direct Messages Container
-const DirectMessagesContainer = createContainer((props) => {
+// Direct Messages List Container
+const DirectMessagesListContainer = createContainer((props) => {
 
     const usersAllLoaded = Meteor.subscribe('users-all-publication').ready();
     const usersAll = Meteor.users.find({ _id: { $ne: Meteor.userId() } }, { sort: { createdAt: -1 }}).fetch();
@@ -18,7 +18,7 @@ const DirectMessagesContainer = createContainer((props) => {
 
         user:  Meteor.user() ? Meteor.user() : {}
     };
-}, DirectMessages);
+}, DirectMessagesList);
 
 // Finally, export the Container
-export default DirectMessagesContainer;
+export default DirectMessagesListContainer;

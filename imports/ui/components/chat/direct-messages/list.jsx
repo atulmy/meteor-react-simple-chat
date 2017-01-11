@@ -3,10 +3,10 @@ import React from 'react';
 import ReactHelmet from 'react-helmet';
 
 // App Imports
-import DirectMessageList from './direct-message-list';
+import DirectMessageItems from './items';
 
-// Direct Messages Component
-class DirectMessages extends React.Component {
+// Direct Messages List Component
+class DirectMessagesList extends React.Component {
 
     render() {
         return (
@@ -16,7 +16,7 @@ class DirectMessages extends React.Component {
                 />
 
                 <div className="col s12 m4">
-                    <DirectMessageList
+                    <DirectMessageItems
                         usersAllLoaded={ this.props.usersAllLoaded }
                         usersAll={ this.props.usersAll }
                         user={ this.props.user }
@@ -33,16 +33,16 @@ class DirectMessages extends React.Component {
 }
 
 // Properties
-DirectMessages.propTypes = {
+DirectMessagesList.propTypes = {
     usersAllLoaded: React.PropTypes.bool,
     usersAll: React.PropTypes.array,
     user: React.PropTypes.object
 };
 
 // Contexts
-DirectMessages.contextTypes = {
+DirectMessagesList.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default DirectMessages;
+export default DirectMessagesList;

@@ -3,9 +3,9 @@ import React from 'react';
 import ReactHelmet from 'react-helmet';
 
 // App Imports
-import * as ChatMethods from '../../../api/chats/methods';
-import ChatItem from './chat-item';
-import DirectMessageList from './direct-message-list';
+import * as ChatMethods from '../../../../api/chats/methods';
+import ChatItem from '../chat-item';
+import DirectMessageItems from './items';
 
 // Direct Message Component
 class DirectMessage extends React.Component {
@@ -110,14 +110,14 @@ class DirectMessage extends React.Component {
         return (
             <div>
                 <ReactHelmet
-                    title="Chat Room - Simple Chat"
+                    title="Direct Message - Simple Chat"
                 />
 
                 { this.state.error ? <p className="alert alert-danger">{ this.state.error }</p> : '' }
                 { this.state.isLoading ? <p className="alert alert-info">Please wait...</p> : '' }
 
                 <div className="col s12 m4">
-                    <DirectMessageList
+                    <DirectMessageItems
                         usersAllLoaded={ this.props.usersAllLoaded }
                         usersAll={ this.props.usersAll }
                         user={ this.props.user }

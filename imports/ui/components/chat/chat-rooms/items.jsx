@@ -2,10 +2,10 @@
 import React from 'react';
 
 // App Imports
-import PublicChatRoomItem from './public-chat-room-item';
+import ChatRoomsItem from './item';
 
-// Public Chat Room List Component
-class PublicChatRoomList extends React.Component {
+//  Chat Room Items Component
+class ChatRoomItems extends React.Component {
 
     renderChatRooms() {
         let chatRoomsList;
@@ -14,7 +14,7 @@ class PublicChatRoomList extends React.Component {
             if(this.props.publicChatRooms.length > 0) {
                 chatRoomsList = (
                     this.props.publicChatRooms.map((chatRoom) => (
-                        <PublicChatRoomItem chatRoom={ chatRoom } key={ chatRoom._id }/>
+                        <ChatRoomsItem chatRoom={ chatRoom } key={ chatRoom._id }/>
                     ))
                 )
             } else {
@@ -44,15 +44,15 @@ class PublicChatRoomList extends React.Component {
 }
 
 // Properties
-PublicChatRoomList.propTypes = {
+ChatRoomItems.propTypes = {
     publicChatRoomsLoaded: React.PropTypes.bool,
     publicChatRooms: React.PropTypes.array
 };
 
 // Contexts
-PublicChatRoomList.contextTypes = {
+ChatRoomItems.contextTypes = {
     router: React.PropTypes.object.isRequired
 };
 
 // Finally, export the Component
-export default PublicChatRoomList;
+export default ChatRoomItems;
