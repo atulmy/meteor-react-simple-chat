@@ -39,12 +39,69 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat.png)
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-secondary-menu.png)
 
-## Authors
+## Core Structure
+    simple-chat
+      ├── client
+      │   ├── styles
+      │   ├── index.html
+      │   └── index.js
+      │
+      ├── imports
+      │   ├── api
+      │   │   ├── chat-room-members
+      │   │   │   ├── collection.js
+      │   │   │   ├── methods.js
+      │   │   │   └── publish.js
+      │   │   │
+      │   │   ├── chat-rooms
+      │   │   │   ├── collection.js
+      │   │   │   ├── methods.js
+      │   │   │   └── publish.js
+      │   │   │
+      │   │   ├── chats
+      │   │   │   ├── collection.js
+      │   │   │   ├── methods.js
+      │   │   │   └── publish.js
+      │   │   │
+      │   │   └── users
+      │   │       ├── methods.js
+      │   │       └── publish.js
+      │   │
+      │   ├── startup
+      │   │   ├── client
+      │   │   │   ├── index.js
+      │   │   │   └── routes.js
+      │   │   │
+      │   │   ├── common
+      │   │   │   └── routes.js
+      │   │   │
+      │   │   └── server
+      │   │       ├── api.js
+      │   │       ├── index.js
+      │   │       ├── routes.js
+      │   │       └── seeds.js
+      │   │
+      │   ├── ui
+      │   │   └── components
+      │   │       ├── chat
+      │   │       ├── common
+      │   │       ├── user
+      │   │       │
+      │   │       └── app.jsx
+      │   │
+      │   ├── reducers
+      │   ├── index.js
+      │   └── routes.js
+      │
+      ├── server
+      │   └── index.js
+      │
+      └── package.json
 
+## Authors
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
 
 ## Made with Meteor
-
 Meteor is an ultra-simple environment for building modern web
 applications.
 
