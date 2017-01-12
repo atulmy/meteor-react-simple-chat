@@ -71,7 +71,6 @@ simple-chat
   └── server
             </pre>
         </td>
-        
         <td width="50%" style="width: 50%">
             <p>Folders and Files</p>
             <pre>
