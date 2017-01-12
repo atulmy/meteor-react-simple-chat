@@ -39,6 +39,9 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat.png)
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-secondary-menu.png)
 
+## Schema
+![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-schema.png)
+
 ## Structure
 <table width="100%" style="width: 100%">
     <tbody>
