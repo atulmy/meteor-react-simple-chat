@@ -39,7 +39,41 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat.png)
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-secondary-menu.png)
 
-## Core Structure
+## Structure
+<table width="100%" style="width: 100%">
+    <tr valign="top">
+        <td width="50%" style="width: 50%">
+            <p>Folders</p>
+            <pre>
+    simple-chat
+      ├── client
+      │   └── styles
+      │
+      ├── imports
+      │   ├── api
+      │   │   ├── chat-room-members
+      │   │   ├── chat-rooms
+      │   │   ├── chats
+      │   │   └── users
+      │   │
+      │   ├── startup
+      │   │   ├── client
+      │   │   ├── common
+      │   │   └── server
+      │   │
+      │   └── ui
+      │       └── components
+      │           ├── chat
+      │           ├── common
+      │           └── user
+      │
+      └── server
+            </pre>
+        </td>
+        
+        <td width="50%" style="width: 50%">
+            <p>Folders and Files</p>
+            <pre>
     simple-chat
       ├── client
       │   ├── styles
@@ -81,22 +115,22 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
       │   │       ├── routes.js
       │   │       └── seeds.js
       │   │
-      │   ├── ui
-      │   │   └── components
-      │   │       ├── chat
-      │   │       ├── common
-      │   │       ├── user
-      │   │       │
-      │   │       └── app.jsx
-      │   │
-      │   ├── reducers
-      │   ├── index.js
-      │   └── routes.js
+      │   └── ui
+      │       └── components
+      │           ├── chat
+      │           ├── common
+      │           ├── user
+      │           │
+      │           └── app.jsx
       │
       ├── server
       │   └── index.js
       │
       └── package.json
+            </pre>
+        </td>
+    </tr>
+</table>
 
 ## Authors
 Atul Yadav - [GitHub](https://github.com/atulmy) &bull; [Twitter](https://twitter.com/atulmy)
