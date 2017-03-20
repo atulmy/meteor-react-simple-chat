@@ -1,4 +1,4 @@
-# Simple Chat
+# 💬 Simple Chat
 A simple chat application built with Meteor 1.4 and ReactJS
 
 Demo: http://meteor-react-simple-chat.demo.atulmy.com/
@@ -39,6 +39,9 @@ Demo: http://meteor-react-simple-chat.demo.atulmy.com/
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat.png)
 ![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-secondary-menu.png)
 
+## Schema
+![screenshot](http://atulmy.com/atulmy.com/attachments/images/simple-chat/simple-chat-schema.png)
+
 ## Structure
 <table width="100%" style="width: 100%">
     <tbody>
@@ -71,7 +74,6 @@ simple-chat
   └── server
             </pre>
         </td>
-        
         <td width="50%" style="width: 50%">
             <p>Folders and Files</p>
             <pre>
